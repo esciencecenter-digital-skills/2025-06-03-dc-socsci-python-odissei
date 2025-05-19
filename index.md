@@ -458,7 +458,9 @@ during the workshop.
 {% if info.carpentry == "swc" %}
 {% include swc/setup.html %}
 {% elsif info.carpentry == "dc" %}
-{% include dc/setup.html %}
+{% capture content %}
+{% remote_include {{lesson_meta}}/setup-python-only.md %}
+{% endcapture %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/setup.html %}
 {% elsif info.carpentry == "ds" %}
